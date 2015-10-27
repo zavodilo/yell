@@ -1,0 +1,1 @@
+SELECT `type`, `value` FROM data AS a WHERE `date` = (SELECT MAX(`date`) FROM data AS b WHERE a.`type` = b.`type`) ORDER BY a.`type`
