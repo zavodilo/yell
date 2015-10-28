@@ -6,9 +6,18 @@
  */
 class Square extends SimpleShape implements ShapeStrategy
 {
-    public function createShape()
+    /**
+     * Добавляем картинку на фон
+     * @param $image - картинка фона
+     * @return mixed - возвращаем новую картинку фона
+     */
+    public function createShape($image)
     {
-        return "Square " . $this->size;
+        //Определяем цвет
+        $color = imagecolorallocate($image, $this->red, $this->green, $this->blue);
+        //Рисуем квадрат
+        imagerectangle($image, $this->size, $this->size, $this->size + 20, $this->size + 20, $color);
+        return $image;
     }
 }
 

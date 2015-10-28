@@ -1,13 +1,15 @@
 <?php
 /*
  * Тестовая строка
- * Пример: http://localhost/?shapes=%5B%7B%22type%22%3A%22circle%22%2C%22params%22%3A%7B%22size%22%3A%221%22%2C%22color%22%3A%22FFFFFF%22%7D%7D%2C%7B%22type%22%3A%22square%22%2C%22params%22%3A%7B%22size%22%3A%221%22%2C%22color%22%3A%22FFFFFF%22%7D%7D%2C%7B%22type%22%3A%22circle%22%2C%22params%22%3A%7B%22size%22%3A%222%22%2C%22color%22%3A%22000000%22%7D%7D%5D
+ * Пример:
+ * http://localhost/?shapes=%5B%7B%22type%22%3A%22circle%22%2C%22params%22%3A%7B%22size%22%3A%2215%22%2C%22red%22%3A%22200%22%2C%22green%22%3A%2220%22%2C%22blue%22%3A%22100%22%7D%7D%2C%7B%22type%22%3A%22square%22%2C%22params%22%3A%7B%22size%22%3A%2230%22%2C%22red%22%3A%22230%22%2C%22green%22%3A%2220%22%2C%22blue%22%3A%22100%22%7D%7D%2C%7B%22type%22%3A%22circle%22%2C%22params%22%3A%7B%22size%22%3A%2220%22%2C%22red%22%3A%22100%22%2C%22green%22%3A%2220%22%2C%22blue%22%3A%22100%22%7D%7D%5D
  */
+/* Раскомментировать, чтоб узнать строку, которая преобразована для вставки в http://localhost/?shapes= */
 /*
 $shapes = [
-    ['type' => 'circle', 'params' => ['size' => '1', 'color' => 'FFFFFF']],
-    ['type' => 'square', 'params' => ['size' => '1', 'color' => 'FFFFFF']],
-    ['type' => 'circle', 'params' => ['size' => '2', 'color' => '000000']]
+    ['type' => 'circle', 'params' => ['size' => '15', 'red' => '200', 'green' => '20', 'blue' => '100']],
+    ['type' => 'square', 'params' => ['size' => '30', 'red' => '230', 'green' => '20', 'blue' => '100']],
+    ['type' => 'circle', 'params' => ['size' => '20', 'red' => '100', 'green' => '20', 'blue' => '100']]
 ];
 echo (urlencode(json_encode($shapes))); exit;
 */

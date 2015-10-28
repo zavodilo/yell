@@ -31,11 +31,15 @@ class MainController {
      * @throws Exception - Не задано обно из св-в type или params
      */
     function actionShapes(array $shapes) {
-        $arrayToView = array(); //массив данных передаваемых в представление
+        $toView = array(); //данные передаваемые в представление
+
+        // Создаем заготовку изображения размером 200х200
+        $image = imagecreatetruecolor(200, 200);
+
         //В цикле обходим массив объектов
         foreach($shapes as $shape) {
             //проеряем, что у полученных объектов установлены св-ва type и params, иначе кидаем ошибку
-            if(isset($shape->type) && isset($shape->params)) {
+            if(isset($shape->type) && isset($shape->params) && $shape->type && $shape->params) {
                 //Инициализируем переменную Фигуры
                 $shapeObject = null;
                 //В соответствии с полученными данными типа фигуры, создаем объект Фигуры
@@ -54,7 +58,7 @@ class MainController {
                     //Создаем контекст паттерна Стратегия
                     $context = new Context($shapeObject); //применяем паттерн стратегия
                     //Вызываем обработчик паттерна Стратегия
-                    $arrayToView[] = $context->createShape();
+                    $toView = $context->createShape($image);
                 }
             } else {
                 //бросаем ошибку
@@ -63,7 +67,7 @@ class MainController {
         }
 
         //Выводим на экран данные из фигур
-        View::render($arrayToView);
+        View::render($toView);
     }
 }
 

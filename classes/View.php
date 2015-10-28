@@ -6,8 +6,10 @@
  */
 class View {
 
-    public static function render(array $array) {
-        var_dump($array);
+    public static function render($image) {
+        // PNG изображение
+        header('Content-type: image/png');
+        imagepng($image);
     }
 }
 

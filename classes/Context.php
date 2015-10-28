@@ -20,11 +20,12 @@ class Context
 
     /**
      * Получем данные из объекта Фигуры и возвращаем их для передачи в представление
+     * @param $image - заготовка изображения
      * @return mixed Возвращаем данные из объекта Фигуры
      */
-    function createShape()
+    function createShape($image)
     {
-        return $this->shapeStrategy->createShape() ;
+        return $this->shapeStrategy->createShape($image) ;
     }
 }
 

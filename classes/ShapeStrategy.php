@@ -8,8 +8,9 @@ interface ShapeStrategy
 {
     /**
      * Метод, определяющий способ вызова алгоритма
+     * @param $image - заготовка изображения
      * @return mixed
      */
-    public function createShape();
+    public function createShape($image);
 }
 
