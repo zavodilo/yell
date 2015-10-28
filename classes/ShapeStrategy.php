@@ -1,10 +1,15 @@
 <?php
 
 /**
+ * Шаблон Strategy
  * Interface ShapeStrategy
  */
 interface ShapeStrategy
 {
-    function createShape();
+    /**
+     * Метод, определяющий способ вызова алгоритма
+     * @return mixed
+     */
+    public function createShape();
 }
 
