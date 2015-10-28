@@ -55,7 +55,11 @@ class SimpleShape
     protected function setParam($param, $params)
     {
         if(isset($params[$param])) {
-            $this->$param = (int)$params[$param];
+            if((int)$params[$param] >= 0 && (int)$params[$param]<=255) {
+                $this->$param = (int)$params[$param];
+            } else {
+                throw new Exception('Параметр ' . $param . ' не может быть больше 255 или меньше 0.' . $params[$param], 400);
+            }
         } else {
             throw new Exception('Не задан ' . $param, 400);
         }
